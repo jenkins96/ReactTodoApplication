@@ -5,17 +5,7 @@ import Todo from "./Todo.js";
 
 // I will use three components: Header, TodoList and TodoForm
 export function Home() {
-	const [todos, setTodos] = useState([
-		{
-			text: "Learn about React"
-		},
-		{
-			text: "Meet friend for lunch"
-		},
-		{
-			text: "Build really cool todo app"
-		}
-	]);
+	const [todos, setTodos] = useState([]);
 
 	const addTodo = text => {
 		const newTodos = [...todos, { text }];
