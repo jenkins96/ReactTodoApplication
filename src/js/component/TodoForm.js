@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
+// TodoForm Component
 function TodoForm({ addTodo }) {
-	const [value, setValue] = React.useState("");
+	const [value, setValue] = useState("");
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -23,3 +23,5 @@ function TodoForm({ addTodo }) {
 	);
 }
 export default TodoForm;
+
+// NO ME QUEDA TOTALMENTE CLARO EL "handleSubmit" ??

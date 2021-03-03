@@ -1,6 +1,6 @@
 import React from "react";
 
-// Creating Header Component
+// Header Component
 function Header() {
 	return (
 		<div className="">
