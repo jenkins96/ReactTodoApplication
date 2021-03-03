@@ -1,24 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import Header from "./Header.js";
+import TodoForm from "./TodoForm.js";
+import Todo from "./Todo.js";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
+// I will use three components: Header, TodoList and TodoForm
 export function Home() {
+	const [todos, setTodos] = useState([
+		{
+			text: "Learn about React"
+		},
+		{
+			text: "Meet friend for lunch"
+		},
+		{
+			text: "Build really cool todo app"
+		}
+	]);
+
+	const addTodo = text => {
+		const newTodos = [...todos, { text }];
+		setTodos(newTodos);
+	};
+
+	const removeTodo = index => {
+		const newTodos = [...todos];
+		newTodos.splice(index, 1);
+		setTodos(newTodos);
+	};
+
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container">
+			<Header />
+			<TodoForm addTodo={addTodo} />
+			<div className="todo-list">
+				{todos.map((todo, index) => (
+					<Todo
+						key={index}
+						index={index}
+						todo={todo}
+						removeTodo={removeTodo}
+					/>
+				))}
+			</div>
 		</div>
 	);
 }
