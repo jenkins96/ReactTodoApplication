@@ -19,5 +19,4 @@ Todo.propTypes = {
 	index: PropTypes.number,
 	removeTodo: PropTypes.func
 };
-
 export default Todo;

@@ -27,7 +27,7 @@ export function Home() {
 	};
 
 	return (
-		<div className="container">
+		<div className="container-fluid">
 			<Header />
 			<TodoForm addTodo={addTodo} />
 			<div className="todo-list">
