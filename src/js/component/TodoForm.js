@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 // TodoForm Component
 function TodoForm({ addTodo }) {
 	const [value, setValue] = useState("");
@@ -22,6 +23,7 @@ function TodoForm({ addTodo }) {
 		</form>
 	);
 }
+TodoForm.propTypes = {
+	addTodo: PropTypes.func
+};
 export default TodoForm;
-
-// NO ME QUEDA TOTALMENTE CLARO EL "handleSubmit" ??

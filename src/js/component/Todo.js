@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 // Todo Component
 function Todo({ todo, index, removeTodo }) {
 	return (
@@ -12,7 +14,10 @@ function Todo({ todo, index, removeTodo }) {
 		</div>
 	);
 }
-export default Todo;
+Todo.propTypes = {
+	todo: PropTypes.array,
+	index: PropTypes.number,
+	removeTodo: PropTypes.func
+};
 
-// {todo.text} ?? PARA QUE
-// LA UNICA FINALIDAD DE ESTE COMPONENTE ES BORRAR UN ELEMENTO ??
+export default Todo;
